@@ -1,0 +1,9 @@
+dist/
+node_modules/
+package-lock.json
+image/
+music/
+index.css
+.vscode/
+playwright-report/
+test-results/

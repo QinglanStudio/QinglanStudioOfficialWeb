@@ -1,115 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>青岚工作室文件下载站</title>
-        <link rel="icon" href="image/icon/logo.png" type="image/png">
-        <link rel="stylesheet" href="index.css">
-        <meta charset="UTF-8">
-        <metaname=“viewport” content=“width=device-width; initial-scale=1.0”></metaname>
-
-        <div class="topnav">
-            <ul style="list-style: none;">
-                <li><a href="index.html" class="menu-item-home">首页</a></li>
-                <li><a style="margin-left: 100px;" href="mc.html">MC</a></li>
-                <li><a style="margin-left: 200px;" href="https://space.bilibili.com/3537114702547033" class="site-author">B站账号</a></li>
-                <li><a style="margin-left: 310px;" href="file.html">下载站</a></li>
-                <li><a style="margin-left: 410px;" href="https://github.com/lihaoyuan114" class="links-of-author">Git</a></li>
-            </ul>
-        </div>
-
-        <audio src="music/filesite.mp3" autoplay hidden loop preload></audio>
-    </head>
-
-    <body class="bg">
-        <script src="https://fastly.jsdelivr.net/npm/live2d-widgets@1.0.0-rc.4/dist/autoload.js"></script>
-
-        <style>
-            a:link,
-            a:visited {
-                color: white; /* 设置链接的初始颜色为蓝色 */
-                text-decoration: none; /* 取消链接的下划线 */
-            }
-
-            a:hover,
-            a:active {
-                /* 设置链接在悬停和被点击时的颜色，可以根据需要自行调整 */  
-                color: cyan; 
-                text-decoration: none; /* 取消链接的下划线 */
-            }
-        </style>
-        <section class="img10">
-            <span><h1 style="font-size: 15vh;margin-bottom: 0px;margin-top: 0px;" class="fade">文件下载站</h1></span>
-            <h2 class="fade"><i>不限速免费下载！</i></h2>
-        </section>
-
-        <section class="img11">
-            <h3>文件下载</h3>
-            <ul style="list-style: decimal;">
-                <li><a href="file/MonsterRunDev.exe">MonsterRun Alpha1.9(因文件体积原因目前无法下载，移步至release)</a></li>
-                <li><a href="image/bg/xy_pc.jpg">小鸟游星野-横板</a></li>
-                <li><a href="image/bg/xy_phone.jpg">小鸟游星野-竖版</a></li>
-                <li><a href="image/bg/ylb_pc.jpg">伊吕波-横板</a></li>
-                <li><a href="image/bg/ylb_phone.jpg">伊吕波-竖版</a></li>
-                <li><a href="image/bg/rn_pc.jpg">空崎日奈-横板</a></li>
-                <li><a href="image/bg/rn_phone.jpg">空崎日奈-竖版</a></li>
-                <li><a href="image/bg/tzxd_pc.jpg">兔子小队-横板</a></li>
-                <li><a href="image/bg/tzxd_phone.jpg">兔子小队-竖版</a></li>
-                <li><a href="image/bg/fll_pc.jpg">芙莉莲-横板</a></li>
-                <li><a href="image/bg/fll_phone.jpg">芙莉莲-竖版</a></li>
-                <li><a href="image/bg/cywl_pc.jpg">初音未来-横板</a></li>
-                <li><a href="image/bg/cywl_phone.jpg">初音未来-竖版</a></li>
-                <li><a href="image/bg/xya_pc.jpg">星野爱-横板</a></li>
-                <li><a href="image/bg/xya_phone.jpg">星野爱-竖版</a></li>
-                <li><a href="image/bg/myn_pc.jpg">猫雨雫-横板</a></li>
-                <li><a href="image/bg/myn_phone.jpg">猫雨雫-竖版</a></li>
-                <li><a href="image/bg/gl_pc.jpg">古拉-横板</a></li>
-                <li><a href="image/bg/gl_phone.jpg">古拉-竖版</a></li>
-                <li><a href="image/bg/stl_pc.jpg">山田凉-横板</a></li>
-                <li><a href="image/bg/stl_phone.jpg">山田凉-竖版</a></li>
-                <li><a href="image/bg/vrt_pc.jpg">维尔汀-横板</a></li>
-                <li><a href="image/bg/vrt_phone.jpg">维尔汀-竖版</a></li>
-            </ul>
-        </section>
-
-
-
-        <script>
-            // 创建 IntersectionObserver 实例
-            const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                // 获取当前 <section> 下的所有 .fade 元素
-                const fadeElements = entry.target.querySelectorAll('.fade');
-                fadeElements.forEach(targetElement => {
-                // 如果元素进入视口
-                if (entry.isIntersecting) {
-                    targetElement.classList.remove('visible-out'); // 移除离开视口的动画
-                    targetElement.classList.add('visible-in'); // 触发进入视口的动画
-                } else {
-                    // 如果元素离开视口
-                    targetElement.classList.remove('visible-in'); // 移除进入视口的动画
-                    targetElement.classList.add('visible-out'); // 触发离开视口的动画
-                }
-                });
-            });
-            }, { threshold: 0.1 }); // 元素进入或离开视口 10% 时触发
-
-            // 获取页面中的所有 <section> 元素
-            const sections = document.querySelectorAll('section'); // 可以根据需要选择其他元素标签
-
-            // 遍历每个 <section> 元素，并开始观察
-            sections.forEach(section => observer.observe(section));
-
-            window.onload = function(){
-             setInterval("toggleSound()",100);
-            }
-
-            function toggleSound() {
-                var music = document.getElementById("vd");//获取ID  
-                    
-                if (music.paused) { //判读是否播放  
-                    music.paused=false;
-                    music.play(); //没有就播放 
-                }    
-            }
-        </script>
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f6f8f5" />
+    <meta
+      name="description"
+      content="青岚工作室，一群热爱游戏的学生。探索我们的独立游戏、软件与 AI 项目，认识团队，发现 Minecraft 社区。"
+    />
+    <link rel="icon" type="image/webp" href="./image/optimized/logo.webp" />
+    <title>下载与资源 · 青岚工作室</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="./src/main.js"></script>
+  </body>
 </html>
