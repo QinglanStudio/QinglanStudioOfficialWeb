@@ -1,116 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>TLVD服务器官方网站 </title>
-        <link rel="icon" href="image/icon/logo.png" type="image/png">
-        <link rel="stylesheet" href="index.css">
-        <meta charset="UTF-8">
-        <metaname=“viewport” content=“width=device-width; initial-scale=1.0”></metaname>
-
-        <div class="topnav">
-            <ul style="list-style: none;">
-                <li><a href="index.html" class="menu-item-home">首页</a></li>
-                <li><a style="margin-left: 100px;" href="mc.html">MC</a></li>
-                <li><a style="margin-left: 200px;" href="https://space.bilibili.com/3537114702547033" class="site-author">B站账号</a></li>
-                <li><a style="margin-left: 310px;" href="file.html">下载站</a></li>
-                <li><a style="margin-left: 410px;" href="https://github.com/lihaoyuan114" class="links-of-author">Git</a></li>
-            </ul>
-        </div>
-
-        <audio src="music/index.mp3" autoplay hidden loop preload id="vd"></audio>
-    </head>
-
-    <body class="bg">
-        <script src="https://fastly.jsdelivr.net/npm/live2d-widgets@1.0.0-rc.4/dist/autoload.js"></script>
-
-        <section class="img12">
-            <span><h1 style="font-size: 15vh;margin-bottom: 0px;margin-top: 0px;" class="fade">TLVD服务器</h1></span>
-            <h2 class="fade"><i>surival / create</i></h2>
-        </section>
-
-        <section class="img13">
-            <center>
-                <h3 class="fade" style="color:aliceblue">关于我们</h3>
-                <p class="fade" style="color:aliceblue">
-                    TLVD服务器是属于青岚工作室的Minecraft服务器。<br>
-                    我们的服务器提供了原版生存和以机械动力为主要Mod的两种模式。<br>
-                    我们致力于为玩家提供一个稳定、公平、有趣的游戏环境。<br>
-                    欢迎加入我们的服务器，与我们一起探索Minecraft的无限可能！<br>
-                </p>
-            </center>
-        </section>
-
-        <section class="img14">
-            <center>
-                <h3 class="fade" style="color:aliceblue">TLSV</h3>
-                <p class="fade" style="color:aliceblue">
-                    TLSV是基于1.20.1的原版生存服，内含tpa插件，完全保留了原版的游戏体验。<br>
-                    服务器崇尚合作，欢迎玩家们在服务器中互相帮助，共同建设美好的世界。<br>
-                    不妨静下心来，体验一下真正的原版生存吧<br>
-                </p>
-            </center>
-        </section>
-
-        <section class="img15">
-            <center>
-                <h3 class="fade" style="color:aliceblue">TLCV</h3>
-                <p class="fade" style="color:aliceblue">
-                    TLCV是基于1.19.2的机械动力Mod生存服，主要以科技养老为主。<br>
-                    服务器内含Create，AdAstra，Tacz，YSM，FarmersDelight等Mod。<br>
-                    科技+养老，无论是研发机器，外出探索，还是在家种田养殖，都能感受到乐趣<br>
-                </p>
-            </center>
-        </section>
-
-        <section class="img16">
-            <center>
-                <h3 class="fade" style="color:aliceblue">服务器信息</h3>
-                <p class="fade" style="color:aliceblue">
-                    TLSV/TLVD共用地址:mc.u848464.nyat.app:36427<br>
-                    具体开放看群内通知<br>
-                </p>
-            </center>
-
-
-
-        <script>
-            // 创建 IntersectionObserver 实例
-            const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                // 获取当前 <section> 下的所有 .fade 元素
-                const fadeElements = entry.target.querySelectorAll('.fade');
-                fadeElements.forEach(targetElement => {
-                // 如果元素进入视口
-                if (entry.isIntersecting) {
-                    targetElement.classList.remove('visible-out'); // 移除离开视口的动画
-                    targetElement.classList.add('visible-in'); // 触发进入视口的动画
-                } else {
-                    // 如果元素离开视口
-                    targetElement.classList.remove('visible-in'); // 移除进入视口的动画
-                    targetElement.classList.add('visible-out'); // 触发离开视口的动画
-                }
-                });
-            });
-            }, { threshold: 0.1 }); // 元素进入或离开视口 10% 时触发
-
-            // 获取页面中的所有 <section> 元素
-            const sections = document.querySelectorAll('section'); // 可以根据需要选择其他元素标签
-
-            // 遍历每个 <section> 元素，并开始观察
-            sections.forEach(section => observer.observe(section));
-
-
-            window.onload = function(){
-             setInterval("toggleSound()",100);
-            }
-
-            function toggleSound() {
-                var music = document.getElementById("vd");//获取ID  
-                    
-                if (music.paused) { //判读是否播放  
-                    music.paused=false;
-                    music.play(); //没有就播放 
-                }    
-            }
-        </script>
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f6f8f5" />
+    <meta
+      name="description"
+      content="青岚工作室，一群热爱游戏的学生。探索我们的独立游戏、软件与 AI 项目，认识团队，发现 Minecraft 社区。"
+    />
+    <link rel="icon" type="image/webp" href="./image/optimized/logo.webp" />
+    <title>TLVD Minecraft · 青岚工作室</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="./src/main.js"></script>
+  </body>
 </html>
